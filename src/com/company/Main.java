@@ -4,7 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Below is the board you will be using for this game of tic tac toe \n 1 | 2 | 3 \n 4 | 5 | 6 \n 7 | 8 | 9");
-        int[][] powerglide = new int[100][];
         System.out.println("Player one: Where would you like to place your first X?" + " Choose one of the numbers on the board to place where you want to go");
         Scanner scan = new Scanner(System.in);
         String control = scan.nextLine();

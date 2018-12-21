@@ -17,6 +17,10 @@ public class Main {
             System.out.println("Player two: Where would you like to place your first O?" + " Choose one of the numbers on the board to place where you want to go");
             Scanner kbInput1 = new Scanner(System.in);
             String O = kbInput1.nextLine();
+            if (control.equalsIgnoreCase("1")) {
+                System.out.println("Sorry player one already went there.");
+                break;
+            }
         }
     }
 }

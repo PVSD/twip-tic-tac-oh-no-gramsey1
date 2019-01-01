@@ -85,6 +85,45 @@ public class Main {
                 System.out.println("Sorry player one already went there.");
             }
         }
+        while (control.equalsIgnoreCase("7")) {
+            StringBuffer string7 = new StringBuffer();
+            String s7 = "X";
+            string7.append("\n 1 | 2 | 3 \n 4 | 5 | 6 \n "+ s7 +" | 8 | 9");
+            String ok7 = string7.toString();
+            System.out.println("Here is your board so far" + ok7);
+            System.out.println("Player two: Where would you like to place your next O?" + " Choose one of the numbers on the board to place where you want to go");
+            Scanner kbInput7 = new Scanner(System.in);
+            String O7 = kbInput7.nextLine();
+            if (control.equalsIgnoreCase("7")) {
+                System.out.println("Sorry player one already went there.");
+            }
+        }
+        while (control.equalsIgnoreCase("8")) {
+            StringBuffer string8 = new StringBuffer();
+            String s8 = "X";
+            string8.append("\n 1 | 2 | 3 \n 4 | 5 | 6 \n 7 | "+ s8 +" | 9");
+            String ok8 = string8.toString();
+            System.out.println("Here is your board so far" + ok8);
+            System.out.println("Player two: Where would you like to place your next O?" + " Choose one of the numbers on the board to place where you want to go");
+            Scanner kbInput8 = new Scanner(System.in);
+            String O8 = kbInput8.nextLine();
+            if (control.equalsIgnoreCase("8")) {
+                System.out.println("Sorry player one already went there.");
+            }
+        }
+        while (control.equalsIgnoreCase("9")) {
+            StringBuffer string9= new StringBuffer();
+            String s9 = "X";
+            string9.append("\n 1 | 2 | 3 \n 4 | 5 | 6 \n 7 | 8 | "+ s9 +"");
+            String ok9 = string9.toString();
+            System.out.println("Here is your board so far" + ok9);
+            System.out.println("Player two: Where would you like to place your next O?" + " Choose one of the numbers on the board to place where you want to go");
+            Scanner kbInput9 = new Scanner(System.in);
+            String O9 = kbInput9.nextLine();
+            if (control.equalsIgnoreCase("9")) {
+                System.out.println("Sorry player one already went there.");
+            }
+        }
     }
 }
 

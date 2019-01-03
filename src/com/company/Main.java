@@ -3,127 +3,139 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Below is the board you will be using for this game of tic tac toe \n 1 | 2 | 3 \n 4 | 5 | 6 \n 7 | 8 | 9");
+
+        String[] board = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8"};
+        boolean end = false;
+        boolean endB = false;
+        System.out.println("Below is the board you will be using for this game of tic tac toe \n " + board[0] + " | " + board[1] + " | " + board[2] + " \n " + board[3] + " | " + board[4] + " | " + board[5] +
+                " \n " + board[6] + " | " + board[7] + " | " + board[8] + "");
         System.out.println("Player one: Where would you like to place your first X?" + " Choose one of the numbers on the board to place where you want to go");
         Scanner scan = new Scanner(System.in);
         String control = scan.nextLine();
-        while (control.equalsIgnoreCase("1")) {
-            StringBuffer string = new StringBuffer();
-            String s = "X";
-            string.append("\n " + s + " | 2 | 3 \n 4 | 5 | 6 \n 7 | 8 | 9");
+        int result = Integer.valueOf(control);
+        /*while (end == false && endB == false) {
+            if (board[0].equalsIgnoreCase("X") && board[1].equalsIgnoreCase("X") && board[2].equalsIgnoreCase("X")
+                    || board[3].equalsIgnoreCase("X") && board[4].equalsIgnoreCase("X") && board[5].equalsIgnoreCase("X")
+                    || board[6].equalsIgnoreCase("X") && board[7].equalsIgnoreCase("X") && board[8].equalsIgnoreCase("X")
+                    || board[0].equalsIgnoreCase("X") && board[3].equalsIgnoreCase("X") && board[6].equalsIgnoreCase("X")
+                    || board[1].equalsIgnoreCase("X") && board[4].equalsIgnoreCase("X") && board[7].equalsIgnoreCase("X")
+                    || board[2].equalsIgnoreCase("X") && board[5].equalsIgnoreCase("X") && board[8].equalsIgnoreCase("X")
+                    || board[0].equalsIgnoreCase("X") && board[4].equalsIgnoreCase("X") && board[8].equalsIgnoreCase("X")
+                    || board[6].equalsIgnoreCase("X") && board[4].equalsIgnoreCase("X") && board[2].equalsIgnoreCase("X")) {
+                end = true;
+                System.out.println("Congrats! X won!");
+            } else if ((board[0].equalsIgnoreCase("O") && board[1].equalsIgnoreCase("O") && board[2].equalsIgnoreCase("O")
+                    || board[3].equalsIgnoreCase("O") && board[4].equalsIgnoreCase("O") && board[5].equalsIgnoreCase("O")
+                    || board[6].equalsIgnoreCase("O") && board[7].equalsIgnoreCase("O") && board[8].equalsIgnoreCase("O")
+                    || board[0].equalsIgnoreCase("O") && board[3].equalsIgnoreCase("O") && board[6].equalsIgnoreCase("O")
+                    || board[1].equalsIgnoreCase("O") && board[4].equalsIgnoreCase("O") && board[7].equalsIgnoreCase("O")
+                    || board[2].equalsIgnoreCase("O") && board[5].equalsIgnoreCase("O") && board[8].equalsIgnoreCase("O")
+                    || board[0].equalsIgnoreCase("O") && board[4].equalsIgnoreCase("O") && board[8].equalsIgnoreCase("O")
+                    || board[6].equalsIgnoreCase("O") && board[4].equalsIgnoreCase("O") && board[2].equalsIgnoreCase("O"))) {
+                endB = true;
+                System.out.println("Congrats! O won!");
+            }
+        }
+        {
+        */
+
+            if (control.equalsIgnoreCase(board[result])) {
+                StringBuffer string = new StringBuffer();
+                String s = "X";
+                if (board[result] == "0") {
+                    string.append("\n " + s + " | " + board[1] + " | " + board[2] + " \n " + board[3] + " | " + board[4] + " | " + board[5] +
+                            " \n " + board[6] + " | " + board[7] + " | " + board[8] + "");
+                    String ok = string.toString();
+                    System.out.println("Here is your board so far" + ok);
+                }
+                if (board[result] == "1") {
+                    string.append("\n " + board[0] + " | " + s + " | " + board[2] + " \n " + board[3] + " | " + board[4] + " | " + board[5] +
+                            " \n " + board[6] + " | " + board[7] + " | " + board[8] + "");
+                    String ok2 = string.toString();
+                    System.out.println("Here is your board so far" + ok2);
+                }
+                if (board[result] == "2") {
+                    string.append("\n " + board[0] + " | " + board[1] + " | " + s + " \n " + board[3] + " | " + board[4] + " | " + board[5] +
+                            " \n " + board[6] + " | " + board[7] + " | " + board[8] + "");
+                    String ok3 = string.toString();
+                    System.out.println("Here is your board so far" + ok3);
+                }
+                if (board[result] == "3") {
+                    string.append("\n " + board[0] + " | " + board[1] + " | " + board[2] + " \n " + s + " | " + board[4] + " | " + board[5] +
+                            " \n " + board[6] + " | " + board[7] + " | " + board[8] + "");
+                    String ok3 = string.toString();
+                    System.out.println("Here is your board so far" + ok3);
+                }
+                if (board[result] == "4") {
+                    string.append("\n " + board[0] + " | " + board[1] + " | " + board[2] + " \n " + board[3] + " | " + s + " | " + board[5] +
+                            " \n " + board[6] + " | " + board[7] + " | " + board[8] + "");
+                    String ok4 = string.toString();
+                    System.out.println("Here is your board so far" + ok4);
+                }
+                if (board[result] == "5") {
+                    string.append("\n " + board[0] + " | " + board[1] + " | " + board[2] + " \n " + board[3] + " | " + s + " | " + s +
+                            " \n " + board[6] + " | " + board[7] + " | " + board[8] + "");
+                    String ok5 = string.toString();
+                    System.out.println("Here is your board so far" + ok5);
+                }
+                if (board[result] == "6") {
+                    string.append("\n " + board[0] + " | " + board[1] + " | " + board[2] + " \n " + board[3] + " | " + board[4] + " | " + board[5] +
+                            " \n " + s + " | " + board[7] + " | " + board[8] + "");
+                    String ok6 = string.toString();
+                    System.out.println("Here is your board so far" + ok6);
+                }
+                if (board[result] == "7") {
+                    string.append("\n " + board[0] + " | " + board[1] + " | " + board[2] + " \n " + board[3] + " | " + board[4] + " | " + board[5] +
+                            " \n " + board[6] + " | " + s + " | " + board[8] + "");
+                    String ok7 = string.toString();
+                    System.out.println("Here is your board so far" + ok7);
+                }
+                if (board[result] == "8") {
+                    string.append("\n " + board[0] + " | " + board[1] + " | " + board[2] + " \n " + board[3] + " | " + board[4] + " | " + board[5] +
+                            " \n " + board[6] + " | " + board[7] + " | " + s + "");
+                    String ok8 = string.toString();
+                    System.out.println("Here is your board so far" + ok8);
+                }
+
+           /* string.append("\n "+ board[0] + " | "+ board[1] + " | "+ board[2]+" \n "+ board[3] + " | "+ board[4] + " | "+ board[5] +
+                    " \n "+ board[6] + " | "+ board[7] + " | "+board[8]+"");
             String ok = string.toString();
             System.out.println("Here is your board so far" + ok);
-            System.out.println("Player two: Where would you like to place your first O?" + " Choose one of the numbers on the board to place where you want to go");
-            Scanner kbInput1 = new Scanner(System.in);
-            String O = kbInput1.nextLine();
-            if (control.equalsIgnoreCase("1")) {
-                System.out.println("Sorry player one already went there.");
-            }
-        }
-            while (control.equalsIgnoreCase("2")) {
-                StringBuffer string2 = new StringBuffer();
-                String s2 = "X";
-                string2.append("\n 1 | " + s2 + " | 3 \n 4 | 5 | 6 \n 7 | 8 | 9");
-                String ok2 = string2.toString();
-                System.out.println("Here is your board so far" + ok2);
-                System.out.println("Player two: Where would you like to place your first O?" + " Choose one of the numbers on the board to place where you want to go");
-                Scanner kbInput2 = new Scanner(System.in);
-                String O2 = kbInput2.nextLine();
-                if (control.equalsIgnoreCase("2")) {
-                    System.out.println("Sorry player one already went there.");
+            */
+
+                System.out.println("Player two: Where would you like to place your first O? DON'T GO WHERE PLAYER ONE WENT!" + " Choose one of the numbers on the board to place where you want to go");
+                Scanner scan2 = new Scanner(System.in);
+                String control2 = scan2.nextLine();
+                int result2 = Integer.valueOf(control2);
+                if (control2.equalsIgnoreCase(board[result2])) {
+                    StringBuffer string2 = new StringBuffer();
+                    String s2 = "O";
+                    if (board[result2] == "0" && board[result] == "1") {
+                        string2.append("\n " + s2 + " | " + s + " | " + board[2] + " \n " + board[3] + " | " + board[4] + " | " + board[5] +
+                                " \n " + board[6] + " | " + board[7] + " | " + board[8] + "");
+                        String ok9 = string2.toString();
+                        System.out.println("Here is your board so far" + ok9);
+                    }
+                    if (board[result2] == "0" && board[result] == "2") {
+                        string2.append("\n " + s2 + " | " + board[1] + " | " + s + " \n " + board[3] + " | " + board[4] + " | " + board[5] +
+                                " \n " + board[6] + " | " + board[7] + " | " + board[8] + "");
+                        String ok9 = string2.toString();
+                        System.out.println("Here is your board so far" + ok9);
+                    }
+                    if (board[result2] == "0" && board[result] == "3") {
+                        string2.append("\n "+ s2 + " | "+ board[1] + " | "+ board[2]+" \n "+ s + " | "+ board[4] + " | "+ board[5] +
+                                " \n "+ board[6] + " | "+ board[7] + " | "+board[8]+"");
+                        String ok10 = string2.toString();
+                        System.out.println("Here is your board so far" + ok10);
+                    }
                 }
-            }
-        while (control.equalsIgnoreCase("3")) {
-            StringBuffer string3 = new StringBuffer();
-            String s3 = "X";
-            string3.append("\n 1 | 2 | " + s3 + "\n 4 | 5 | 6 \n 7 | 8 | 9");
-            String ok3 = string3.toString();
-            System.out.println("Here is your board so far" + ok3);
-            System.out.println("Player two: Where would you like to place your next O?" + " Choose one of the numbers on the board to place where you want to go");
-            Scanner kbInput3 = new Scanner(System.in);
-            String O3 = kbInput3.nextLine();
-            if (control.equalsIgnoreCase("3")) {
-                System.out.println("Sorry player one already went there.");
-            }
         }
-        while (control.equalsIgnoreCase("4")) {
-            StringBuffer string4 = new StringBuffer();
-            String s4 = "X";
-            string4.append("\n 1 | 2 | 3 \n "+ s4 +" | 5 | 6 \n 7 | 8 | 9");
-            String ok4 = string4.toString();
-            System.out.println("Here is your board so far" + ok4);
-            System.out.println("Player two: Where would you like to place your next O?" + " Choose one of the numbers on the board to place where you want to go");
-            Scanner kbInput4 = new Scanner(System.in);
-            String O4 = kbInput4.nextLine();
-            if (control.equalsIgnoreCase("4")) {
-                System.out.println("Sorry player one already went there.");
+
             }
-        }
-        while (control.equalsIgnoreCase("5")) {
-            StringBuffer string5 = new StringBuffer();
-            String s5 = "X";
-            string5.append("\n 1 | 2 | 3 \n 4 | "+ s5 +" | 6 \n 7 | 8 | 9");
-            String ok5 = string5.toString();
-            System.out.println("Here is your board so far" + ok5);
-            System.out.println("Player two: Where would you like to place your next O?" + " Choose one of the numbers on the board to place where you want to go");
-            Scanner kbInput5 = new Scanner(System.in);
-            String O5 = kbInput5.nextLine();
-            if (control.equalsIgnoreCase("5")) {
-                System.out.println("Sorry player one already went there.");
-            }
-        }
-        while (control.equalsIgnoreCase("6")) {
-            StringBuffer string6 = new StringBuffer();
-            String s6 = "X";
-            string6.append("\n 1 | 2 | 3 \n 4 | 5 | "+ s6 +" \n 7 | 8 | 9");
-            String ok6 = string6.toString();
-            System.out.println("Here is your board so far" + ok6);
-            System.out.println("Player two: Where would you like to place your next O?" + " Choose one of the numbers on the board to place where you want to go");
-            Scanner kbInput6 = new Scanner(System.in);
-            String O6 = kbInput6.nextLine();
-            if (control.equalsIgnoreCase("6")) {
-                System.out.println("Sorry player one already went there.");
-            }
-        }
-        while (control.equalsIgnoreCase("7")) {
-            StringBuffer string7 = new StringBuffer();
-            String s7 = "X";
-            string7.append("\n 1 | 2 | 3 \n 4 | 5 | 6 \n "+ s7 +" | 8 | 9");
-            String ok7 = string7.toString();
-            System.out.println("Here is your board so far" + ok7);
-            System.out.println("Player two: Where would you like to place your next O?" + " Choose one of the numbers on the board to place where you want to go");
-            Scanner kbInput7 = new Scanner(System.in);
-            String O7 = kbInput7.nextLine();
-            if (control.equalsIgnoreCase("7")) {
-                System.out.println("Sorry player one already went there.");
-            }
-        }
-        while (control.equalsIgnoreCase("8")) {
-            StringBuffer string8 = new StringBuffer();
-            String s8 = "X";
-            string8.append("\n 1 | 2 | 3 \n 4 | 5 | 6 \n 7 | "+ s8 +" | 9");
-            String ok8 = string8.toString();
-            System.out.println("Here is your board so far" + ok8);
-            System.out.println("Player two: Where would you like to place your next O?" + " Choose one of the numbers on the board to place where you want to go");
-            Scanner kbInput8 = new Scanner(System.in);
-            String O8 = kbInput8.nextLine();
-            if (control.equalsIgnoreCase("8")) {
-                System.out.println("Sorry player one already went there.");
-            }
-        }
-        while (control.equalsIgnoreCase("9")) {
-            StringBuffer string9= new StringBuffer();
-            String s9 = "X";
-            string9.append("\n 1 | 2 | 3 \n 4 | 5 | 6 \n 7 | 8 | "+ s9 +"");
-            String ok9 = string9.toString();
-            System.out.println("Here is your board so far" + ok9);
-            System.out.println("Player two: Where would you like to place your next O?" + " Choose one of the numbers on the board to place where you want to go");
-            Scanner kbInput9 = new Scanner(System.in);
-            String O9 = kbInput9.nextLine();
-            if (control.equalsIgnoreCase("9")) {
-                System.out.println("Sorry player one already went there.");
-            }
-        }
+
+
     }
-}
+
+
+
 
